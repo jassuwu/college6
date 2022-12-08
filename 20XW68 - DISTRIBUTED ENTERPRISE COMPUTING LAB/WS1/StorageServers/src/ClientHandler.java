@@ -11,7 +11,7 @@ import java.io.File;
 
 public class ClientHandler implements Runnable {
 
-    private HashMap<String, ArrayList<File>> storage;
+    private HashMap<String, ArrayList<String>> storage;
     private Socket socket;
     private BufferedReader bufferedReader;
     private BufferedWriter bufferedWriter;
@@ -23,11 +23,9 @@ public class ClientHandler implements Runnable {
             this.socket = socket;
             this.bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             this.bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-            System.out.print("Enter your username: ");
-            Scanner sc = new Scanner(System.in);
-            this.username = sc.nextLine();
+            this.username = this.bufferedReader.readLine();
             this.storage.put(this.username, new ArrayList<>());
-            sc.close();
+            System.out.println("[CLIENTHANDLER] initialized storage for " + this.username + ".");
         } catch (IOException e) {
             e.printStackTrace();
             closeEverything(socket, bufferedReader, bufferedWriter);
@@ -52,6 +50,20 @@ public class ClientHandler implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("WE GOTTA WRITE THIS ONE. :/");
+        String messageFromClient;
+        while (this.socket.isConnected()) {
+            try {
+                messageFromClient = bufferedReader.readLine();
+                if (messageFromClient.equals(".exit"))
+                    break;
+                this.storage.get(this.username).add(messageFromClient);
+                System.out.println("[" + this.username + "'s ClientHandler" + "]Message from " + this.username
+                        + " '" + messageFromClient + "' stored in storage.");
+            } catch (IOException e) {
+                e.printStackTrace();
+                closeEverything(this.socket, this.bufferedReader, this.bufferedWriter);
+                break;
+            }
+        }
     }
 }
