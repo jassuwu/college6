@@ -10,7 +10,7 @@ class Teacher {
     private String designation;
     private Student[] students;
  
-    public Employee(String name, String employeeID, String designation) {
+    public Teacher(String name, String employeeID, String designation) {
         this.name = name;
         this.employeeID = employeeID;
         this.designation = designation;
