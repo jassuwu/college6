@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class Dependency {
     public static void main(String[] args) {
         System.out.println();
@@ -26,17 +29,17 @@ class Course {
     }
 
     public void setMarks(HashMap<Student, Integer> marks) {
-        this.marks=marks;
+        this.marks = marks;
     }
 }
 
 class CourseStats {
-    public calcAverage(Course course) {
+    public void calcAverage(Course course) {
         Integer sumOfMarks = 0;
         Integer count = 0;
-        for (Map.Entry<Student, Integer> entry: course.marks.entrySet()){
+        for (Map.Entry<Student, Integer> entry : course.getMarks().entrySet()) {
             count++;
-            sumOfMarks+= entry.getValue();
+            sumOfMarks += entry.getValue();
         }
         System.out.println("AVERAGE MARKS: " + sumOfMarks + ".");
     }

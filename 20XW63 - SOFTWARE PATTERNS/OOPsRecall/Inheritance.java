@@ -14,12 +14,13 @@ class Person {
     }
 
     public String getSSN() {
-        return this.SSN;
+        return this.ssn;
     }
 
     public void setSSN(String SSN) {
-        this.SSN = SSN;
+        this.ssn = SSN;
     }
+
     public String getName() {
         return this.name;
     }
@@ -29,9 +30,9 @@ class Person {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Person{ssn:" + this.getSSN() + ", name: " + this.getName() + "}\n";
-    } 
+    }
 }
 
 class Employee extends Person {
@@ -51,6 +52,7 @@ class Employee extends Person {
     public void setEmployeeID(String employeeID) {
         this.employeeID = employeeID;
     }
+
     public String getDesignation() {
         return this.designation;
     }
@@ -60,7 +62,8 @@ class Employee extends Person {
     }
 
     @Override
-    public String toString(){
-        return "Person{ssn:" + this.getSSN() + ", name: " + this.getName() + ", employeeID: " + this.getEmployeeID() + ", designation: " + this.getDesignation() + "}\n";
-    } 
+    public String toString() {
+        return "Person{ssn:" + this.getSSN() + ", name: " + this.getName() + ", employeeID: " + this.getEmployeeID()
+                + ", designation: " + this.getDesignation() + "}\n";
+    }
 }

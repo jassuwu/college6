@@ -9,7 +9,7 @@ class Teacher {
     private String employeeID;
     private String designation;
     private Student[] students;
- 
+
     public Teacher(String name, String employeeID, String designation) {
         this.name = name;
         this.employeeID = employeeID;
@@ -31,6 +31,7 @@ class Teacher {
     public void setEmployeeID(String employeeID) {
         this.employeeID = employeeID;
     }
+
     public String getDesignation() {
         return this.designation;
     }
@@ -53,8 +54,8 @@ class Student {
     private String studentID;
     private String grade;
     private Teacher[] teachers;
- 
-    public student(String name, String studentID, String grade) {
+
+    public Student(String name, String studentID, String grade) {
         this.name = name;
         this.studentID = studentID;
         this.grade = grade;
@@ -75,6 +76,7 @@ class Student {
     public void setStudentID(String studentID) {
         this.studentID = studentID;
     }
+
     public String getGrade() {
         return this.grade;
     }

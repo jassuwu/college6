@@ -23,14 +23,13 @@ class Book {
         }
 
         public String getMaterial() {
-            return this.getMaterial;
+            return this.material;
         }
 
         public void setMaterial(String material) {
             this.material = material;
         }
     }
-
 
     private String title;
     private Page[] pages;
