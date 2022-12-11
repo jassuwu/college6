@@ -84,7 +84,7 @@ print('\n######################################################################\
 print("A (StartingDepth-1) Iterative Deepening Depth-First Search of the graph DFSDemo gives: ",
       DFSDemo.IDDFS(0))
 
-# Using BFS in the pathTo fn gives us the shortest path
+# Using IDDFS for path-finding
 print("A path from 0 to 6 using IDDFS: ",
       DFSDemo.pathTo(0, 6, DFSDemo.IDDFS))
 print("A path from 0 to 7 using IDDFS: ",
