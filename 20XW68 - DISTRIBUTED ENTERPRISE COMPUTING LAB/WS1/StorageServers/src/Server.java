@@ -1,12 +1,15 @@
-import java.io.File;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Server {
     private ServerSocket serverSocket;
+
+    public static void main(String[] args) throws IOException {
+        ServerSocket serverSocket = new ServerSocket(65456);
+        Server server = new Server(serverSocket);
+        server.startServer();
+    }
 
     public Server(ServerSocket serverSocket) {
         this.serverSocket = serverSocket;
@@ -24,8 +27,7 @@ public class Server {
                 new Thread(clientHandler).start();
             }
         } catch (IOException e) {
-            System.err.println("THIS STACKTRACE IS PRINTED BECAUSE I PRINTED IT.");
-            e.printStackTrace();
+            System.err.println("IO EXCEPTION IN SERVER STARTSERVER.");
             this.closeServer();
         }
     }
@@ -40,9 +42,4 @@ public class Server {
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        ServerSocket serverSocket = new ServerSocket(65456);
-        Server server = new Server(serverSocket);
-        server.startServer();
-    }
 }
