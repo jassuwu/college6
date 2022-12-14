@@ -16,10 +16,12 @@ public class Client {
 
     public static void main(String[] args) throws UnknownHostException, IOException {
         Scanner sc = new Scanner(System.in);
-        System.out.println("What do you want to be known as ?");
+        System.out.println("Enter the lobby code:");
         Client client = new Client(new Socket("localhost", 65456), sc.nextLine());
-        System.out.println("writing this to CH: " + client.username + " lobby");
-        client.writer.write(client.username + " lobby");
+        // this.username is actually the lobby code till the this.sendMessage() method
+        // is called and the user enters their name
+        System.out.println("writing this to CH: " + client.username);
+        client.writer.write(client.username);
         client.writer.newLine();
         client.writer.flush();
         client.sendMessage();
@@ -51,13 +53,28 @@ public class Client {
         }
     }
 
+    public String buildBoardFromOneLineString(String line) {
+        String board = "";
+        System.out.println("line: " + line);
+        String[] boardArray = line.split("|");
+        System.out.println("boardArray" + boardArray);
+        for (String s : boardArray)
+            board += s + "|";
+        return board;
+    }
+
     public void sendMessage() {
         try {
-            // writer.write(this.username);
-            // writer.newLine();
-            // writer.flush();
+            System.out.println("Enter your name to let your opponent know who you are:");
+            Scanner sc = new Scanner(System.in);
+            String message = sc.nextLine();
+            this.username = message;
+            writer.write(message);
+            writer.newLine();
+            writer.flush();
             System.out.println("Name sent.");
-            System.out.println(reader.readLine() + " received.");
+            System.out.println("Server response: " + buildBoardFromOneLineString(reader.readLine()));
+            sc.close();
         } catch (IOException e) {
             closeEverything(socket, writer, reader);
         }

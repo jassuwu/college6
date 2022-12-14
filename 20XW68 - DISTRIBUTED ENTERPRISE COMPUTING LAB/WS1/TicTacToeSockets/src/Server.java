@@ -26,11 +26,9 @@ public class Server {
             while (true) {
                 System.out.println("[SERVER] Listening for new connections...");
                 Socket conn = this.serverSocket.accept();
-                System.out.println(conn.toString() + " connected to the server. They are added to the waiting list.");
+                System.out.println(conn.toString() + " connected to the server.");
                 BufferedReader brOfConn = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                String[] inString = brOfConn.readLine().split(" ");
-                String clientName = inString[0];
-                String lobbyCode = inString[1];
+                String lobbyCode = brOfConn.readLine();
                 if (lobbyList.containsKey(lobbyCode)) {
                     // Start a new Thread for a Socket prev stored and the newly arrived one and
                     // remove the lobbyCode.
@@ -41,7 +39,7 @@ public class Server {
                     // Otherwise add to the list of waiting sockets.
                     lobbyList.put(lobbyCode, conn);
                     System.out.println(
-                            "Added '" + clientName + "' with the lobbyCode of '" + lobbyCode
+                            "Added a waiter with the lobbyCode of '" + lobbyCode
                                     + "' to the list of waiters. ");
                 }
             }

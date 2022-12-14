@@ -25,7 +25,7 @@ public class ClientHandler implements Runnable {
             this.reader2 = new BufferedReader(new InputStreamReader(player2.getInputStream()));
             this.gameBoard = new Board();
             System.out.println("This is the game board.");
-            gameBoard.displayBoard();
+            System.out.println(gameBoard.buildBoard());
         } catch (IOException e) {
             System.out.println("IO EXCEPTION AT CLIENTHANDLER CONSTRUCTOR.");
             e.printStackTrace();
@@ -54,18 +54,20 @@ public class ClientHandler implements Runnable {
 
     @Override
     public void run() {
+        String p1Name = "";
+        String p2Name = "";
         try {
             System.out.println("[" + this + "] " + "ClientHandler is running.");
-            String p1Name = reader1.readLine();
-            String p2Name = reader2.readLine();
-            System.out.println("[" + this + "] " + p1Name + "and " + p2Name + " are playing.");
-            writer1.write("Confirmation to p1.");
+            p1Name = reader1.readLine();
+            p2Name = reader2.readLine();
+            System.out.println("[" + this + "] '" + p1Name + "' and '" + p2Name + "' received.");
+            writer1.write(gameBoard.buildBoard());
             writer1.newLine();
             writer1.flush();
-            writer2.write("Confirmation to p2.");
+            writer2.write(gameBoard.buildBoard());
             writer2.newLine();
             writer2.flush();
-            System.out.println("[" + this + "] " + "Confirmation sent.");
+            System.out.println("[" + this + "] " + "Gameboard sent.");
         } catch (IOException e) {
             System.out.println("IOEXCPETION IN CLIENTHANDLER RUN.");
             e.printStackTrace();

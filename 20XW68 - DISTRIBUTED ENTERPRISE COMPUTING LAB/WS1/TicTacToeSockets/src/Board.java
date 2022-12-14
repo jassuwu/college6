@@ -7,19 +7,21 @@ public class Board {
     public Board() {
         this.board = new char[3][3];
         for (char[] row : board) {
-            Arrays.fill(row, ' ');
+            Arrays.fill(row, 'v');
         }
         currentTurn = true;
     }
 
-    public void displayBoard() {
-        for (char[] row : board) {
-            System.out.print("|");
+    public String buildBoard() {
+        String board = "";
+        for (char[] row : this.board) {
+            board += "|";
             for (char el : row) {
-                System.out.print(el + "|");
+                board += el + "|";
             }
-            System.out.println();
+            board += "\n";
         }
+        return board;
     }
 
     public void changeTurn() {
