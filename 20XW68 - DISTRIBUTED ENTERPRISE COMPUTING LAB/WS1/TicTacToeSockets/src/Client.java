@@ -12,7 +12,6 @@ public class Client {
     private BufferedWriter writer;
     private BufferedReader reader;
     private String username;
-    private Board gameBoard;
 
     public static void main(String[] args) throws UnknownHostException, IOException {
         Scanner sc = new Scanner(System.in);
@@ -63,8 +62,16 @@ public class Client {
         return board;
     }
 
+    public void printBoard() throws IOException {
+        // There are only 3 lines on the board, so this loop.
+        for(int i = 0; i < 3; i++) {
+            System.out.println(this.reader.readLine());
+        }
+    }
+
     public void sendMessage() {
         try {
+            String temp = "";
             System.out.println("Enter your name to let your opponent know who you are:");
             Scanner sc = new Scanner(System.in);
             String message = sc.nextLine();
@@ -73,7 +80,19 @@ public class Client {
             writer.newLine();
             writer.flush();
             System.out.println("Name sent.");
-            System.out.println("Server response: " + buildBoardFromOneLineString(reader.readLine()));
+            System.out.println("Game board: ");
+            this.printBoard();
+            while((temp = reader.readLine()) != null) {
+                if(temp.equalsIgnoreCase(".exit")) {
+                    break;
+                }
+                System.out.println(temp);
+                System.out.print("Enter the box number: ");
+                writer.write(sc.nextLine());
+                writer.newLine();
+                writer.flush();
+            }
+            System.out.println("END OF GAME. CLOSING CLIENT.");
             sc.close();
         } catch (IOException e) {
             closeEverything(socket, writer, reader);
