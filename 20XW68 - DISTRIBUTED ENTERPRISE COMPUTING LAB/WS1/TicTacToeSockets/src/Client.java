@@ -12,11 +12,16 @@ public class Client {
     private BufferedWriter writer;
     private BufferedReader reader;
     private String username;
+    private Board gameBoard;
 
     public static void main(String[] args) throws UnknownHostException, IOException {
         Scanner sc = new Scanner(System.in);
         System.out.println("What do you want to be known as ?");
         Client client = new Client(new Socket("localhost", 65456), sc.nextLine());
+        System.out.println("writing this to CH: " + client.username + " lobby");
+        client.writer.write(client.username + " lobby");
+        client.writer.newLine();
+        client.writer.flush();
         client.sendMessage();
         client.closeEverything(client.socket, client.writer, client.reader);
         sc.close();
@@ -48,14 +53,11 @@ public class Client {
 
     public void sendMessage() {
         try {
-            while (true) {
-                System.out.println("I WILL SEND A MESSAGE NOW TO CLIENT HANDLER.");
-                writer.write(this.username);
-                writer.newLine();
-                writer.flush();
-                System.out.println("SENT MY USERNAME.");
-                System.out.println("The lobby code is: " + reader.readLine());
-            }
+            // writer.write(this.username);
+            // writer.newLine();
+            // writer.flush();
+            System.out.println("Name sent.");
+            System.out.println(reader.readLine() + " received.");
         } catch (IOException e) {
             closeEverything(socket, writer, reader);
         }
