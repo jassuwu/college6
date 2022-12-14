@@ -19,11 +19,11 @@ public class Client {
         Client client = new Client(new Socket("localhost", 65456), sc.nextLine());
         // this.username is actually the lobby code till the this.sendMessage() method
         // is called and the user enters their name
-        System.out.println("writing this to CH: " + client.username);
         client.writer.write(client.username);
         client.writer.newLine();
         client.writer.flush();
-        client.sendMessage();
+        client.listenForOpponent();
+        client.sendToOpponent();
         client.closeEverything(client.socket, client.writer, client.reader);
         sc.close();
     }
@@ -52,45 +52,51 @@ public class Client {
         }
     }
 
-    public String buildBoardFromOneLineString(String line) {
-        String board = "";
-        System.out.println("line: " + line);
-        String[] boardArray = line.split("|");
-        System.out.println("boardArray" + boardArray);
-        for (String s : boardArray)
-            board += s + "|";
-        return board;
-    }
-
-    public void printBoard() throws IOException {
-        // There are only 3 lines on the board, so this loop.
-        for(int i = 0; i < 3; i++) {
-            System.out.println(this.reader.readLine());
-        }
-    }
-
-    public void sendMessage() {
-        try {
-            String temp = "";
-            System.out.println("Enter your name to let your opponent know who you are:");
-            Scanner sc = new Scanner(System.in);
-            String message = sc.nextLine();
-            this.username = message;
-            writer.write(message);
-            writer.newLine();
-            writer.flush();
-            System.out.println("Name sent.");
-            System.out.println("Game board: ");
-            this.printBoard();
-            while((temp = reader.readLine()) != null) {
-                if(temp.equalsIgnoreCase(".exit")) {
-                    break;
+    public void listenForOpponent() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    while (socket.isConnected()) {
+                        synchronized (this) {
+                            String temp = reader.readLine();
+                            System.out.println(temp);
+                            if (temp.equalsIgnoreCase("YOUR TURN")) {
+                            }
+                            if (temp.equalsIgnoreCase("THEIR TURN")) {
+                            }
+                            if (temp.equalsIgnoreCase(".exit")) {
+                                break;
+                            }
+                        }
+                    }
+                } catch (IOException e) {
+                    closeEverything(socket, writer, reader);
                 }
-                System.out.println(temp);
-                System.out.print("Enter the box number: ");
-                writer.write(sc.nextLine());
+            }
+        }).start();
+    }
+
+    public void sendToOpponent() {
+        try {
+            Scanner sc = new Scanner(System.in);
+            synchronized (this) {
+                System.out.println("Enter your name to let your opponent know who you are:");
+                String message = sc.nextLine();
+                this.username = message;
+                writer.write(message);
                 writer.newLine();
                 writer.flush();
+                System.out.println("Name sent.");
+                while (this.socket.isConnected()) {
+                    String temp = sc.nextLine();
+                    if (temp.equalsIgnoreCase(".exit")) {
+                        break;
+                    }
+                    writer.write(temp);
+                    writer.newLine();
+                    writer.flush();
+                }
             }
             System.out.println("END OF GAME. CLOSING CLIENT.");
             sc.close();
