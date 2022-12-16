@@ -15,6 +15,8 @@ public class Client {
             dialog = new WindowsDialog();
         } else if (System.getProperty("os.name").equals("Chromium")) {
             dialog = new HtmlDialog();
+        } else {
+            throw new RuntimeException("Error! Unknown operating system.");
         }
     }
 
