@@ -1,12 +1,12 @@
-public class CloningAndSingleton implements Cloneable {
-    private CloningAndSingleton() {
+public class M8CloningAndSingleton implements Cloneable {
+    private M8CloningAndSingleton() {
     }
 
     private static class SingletonHelper {
-        private static final CloningAndSingleton INSTANCE = new CloningAndSingleton();
+        private static final M8CloningAndSingleton INSTANCE = new M8CloningAndSingleton();
     }
 
-    public static CloningAndSingleton getInstance() {
+    public static M8CloningAndSingleton getInstance() {
         return SingletonHelper.INSTANCE;
     }
 
@@ -18,8 +18,8 @@ public class CloningAndSingleton implements Cloneable {
     }
 
     public static void main(String[] args) throws CloneNotSupportedException {
-        CloningAndSingleton instanceOne = CloningAndSingleton.getInstance();
-        CloningAndSingleton instanceTwo = ((CloningAndSingleton) instanceOne.clone());
+        M8CloningAndSingleton instanceOne = M8CloningAndSingleton.getInstance();
+        M8CloningAndSingleton instanceTwo = ((M8CloningAndSingleton) instanceOne.clone());
 
         System.out.println(instanceOne.hashCode());
         System.out.println(instanceTwo.hashCode());
