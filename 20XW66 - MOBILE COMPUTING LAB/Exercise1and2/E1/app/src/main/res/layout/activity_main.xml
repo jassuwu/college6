@@ -7,6 +7,20 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <EditText
+        android:id="@+id/F"
+        android:layout_width="286dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="59dp"
+        android:ems="10"
+        android:hint="°F"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/C" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -33,53 +47,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginTop="12dp"
-        android:fontFamily="sans-serif-condensed"
-        android:text="C to F:"
-        android:textSize="34sp"
+    <EditText
+        android:id="@+id/C"
+        android:layout_width="286dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="68dp"
+        android:ems="10"
+        android:hint="°C"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="101dp"
-        android:ems="10"
-        android:hint="C ?"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
     <Button
-        android:id="@+id/button"
+        android:id="@+id/convertButton"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="2dp"
+        android:layout_width="109dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="151dp"
+        android:layout_marginTop="77dp"
         android:background="@color/teal_200"
         android:backgroundTint="@color/teal_200"
         android:backgroundTintMode="add"
-        android:text="gimme the f"
+        android:text="CONVERT"
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/F" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/oswald_bold"
-        android:text="*"
-        android:textSize="130sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

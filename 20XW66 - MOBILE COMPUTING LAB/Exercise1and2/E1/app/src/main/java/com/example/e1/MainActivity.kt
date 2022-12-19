@@ -4,21 +4,23 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val CToFField = findViewById<EditText>(R.id.editTextTextPersonName);
-        val gimmeFBtn = findViewById<Button>(R.id.button);
-        val opView = findViewById<TextView>(R.id.textView4);
+        val cField = findViewById<EditText>(R.id.C);
+        val fField = findViewById<EditText>(R.id.F);
+        val convertBtn = findViewById<Button>(R.id.convertButton);
 
-        gimmeFBtn.setOnClickListener {
-            var celcius = CToFField.text.toString().toDouble();
-            var result = (9.0/5)*celcius + 32;
-            opView.setText(result.toString());
+        convertBtn.setOnClickListener {
+            if(cField.isFocused) {
+                fField.setText(((cField.text.toString().toDouble()*9.0/5) + 32).toString());
+            }
+            if(fField.isFocused) {
+                cField.setText(((fField.text.toString().toDouble()-32)*5.0/9).toString());
+            }
         }
 
     }
