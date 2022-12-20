@@ -10,5 +10,4 @@ UCSDemo.addEdge(4, 0, 5)
 
 print("No. of vertices: ",UCSDemo.V())
 print("No. of edges: ",UCSDemo.E())
-
 print("ADJLIST",UCSDemo.adjList)
