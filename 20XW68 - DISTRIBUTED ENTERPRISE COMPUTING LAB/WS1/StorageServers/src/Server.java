@@ -3,7 +3,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Server {
-    private ServerSocket serverSocket;
+    private final ServerSocket serverSocket;
 
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = new ServerSocket(65456);
@@ -27,7 +27,7 @@ public class Server {
                 new Thread(clientHandler).start();
             }
         } catch (IOException e) {
-            System.err.println("IO EXCEPTION IN SERVER STARTSERVER.");
+            System.err.println("IO EXCEPTION IN SERVER SERVER STARTER.");
             this.closeServer();
         }
     }
