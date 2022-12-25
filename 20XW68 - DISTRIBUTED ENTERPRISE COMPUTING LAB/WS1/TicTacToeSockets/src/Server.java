@@ -1,3 +1,7 @@
+/*
+ *  @20PW14
+ */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -26,21 +30,22 @@ public class Server {
             while (true) {
                 System.out.println("[SERVER] Listening for new connections...");
                 Socket conn = this.serverSocket.accept();
-                System.out.println(conn.toString() + " connected to the server.");
+                System.out.println("[SERVER] " + conn.toString() + " connected to the server.");
                 BufferedReader brOfConn = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                 String lobbyCode = brOfConn.readLine();
                 if (lobbyList.containsKey(lobbyCode)) {
                     // Start a new Thread for a Socket prev stored and the newly arrived one and
                     // remove the lobbyCode.
-                    System.out.println("New game started and '" + lobbyCode + "' is now free for use.");
+                    System.out.println("[SERVER] " + "New game started and the lobbyCode: '" + lobbyCode
+                            + "' is now free for use.");
                     new Thread(new ClientHandler(lobbyList.get(lobbyCode), conn)).start();
                     lobbyList.remove(lobbyCode);
                 } else {
                     // Otherwise add to the list of waiting sockets.
                     lobbyList.put(lobbyCode, conn);
-                    System.out.println(
+                    System.out.println("[SERVER] " +
                             "Added a waiter with the lobbyCode of '" + lobbyCode
-                                    + "' to the list of waiters. ");
+                            + "' to the list of waiters. ");
                 }
             }
         } catch (IOException e) {

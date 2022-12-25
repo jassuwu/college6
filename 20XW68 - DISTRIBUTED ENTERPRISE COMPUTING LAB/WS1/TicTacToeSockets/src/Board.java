@@ -1,3 +1,7 @@
+/*
+ *  @20PW14
+ */
+
 import java.util.Arrays;
 
 public class Board {
@@ -24,7 +28,10 @@ public class Board {
         return board;
     }
 
-    public boolean getTurn() {return this.currentTurn; }
+    public boolean getTurn() {
+        return this.currentTurn;
+    }
+
     public void changeTurn() {
         this.currentTurn = !currentTurn;
     }
@@ -33,12 +40,12 @@ public class Board {
         int[][] winning_pos = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 1, 4, 7 }, { 2, 5, 8 }, { 3, 6, 9 },
                 { 1, 5, 9 }, { 3, 5, 7 } };
         for (int[] w : winning_pos) {
-            if (this.board[(w[0]-1) / 3][(w[0] - 1) % 3] == 'X' && this.board[(w[1]-1) / 3][(w[1] - 1) % 3] == 'X'
-                    && this.board[(w[2]-1) / 3][(w[2] - 1) % 3] == 'X') {
+            if (this.board[(w[0] - 1) / 3][(w[0] - 1) % 3] == 'X' && this.board[(w[1] - 1) / 3][(w[1] - 1) % 3] == 'X'
+                    && this.board[(w[2] - 1) / 3][(w[2] - 1) % 3] == 'X') {
                 return true;
             }
-            if (this.board[(w[0]-1) / 3][(w[0] - 1) % 3] == 'O' && this.board[(w[1]-1) / 3][(w[1] - 1) % 3] == 'O'
-                    && this.board[(w[2]-1) / 3][(w[2] - 1) % 3] == 'O') {
+            if (this.board[(w[0] - 1) / 3][(w[0] - 1) % 3] == 'O' && this.board[(w[1] - 1) / 3][(w[1] - 1) % 3] == 'O'
+                    && this.board[(w[2] - 1) / 3][(w[2] - 1) % 3] == 'O') {
                 return true;
             }
         }
