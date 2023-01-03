@@ -1,5 +1,23 @@
 // @jassuwu - 20pw14
 
+// Sample run: 
+// INPUT: 
+// Enter a string with tokens separated by spaces: if a > b c = a else c = b
+// OUTPUT:
+// if: keyword
+// a: identifier
+// >: relational operator
+// b: identifier
+// c: identifier
+// =: relational operator
+// a: identifier
+// else: keyword
+// c: identifier
+// =: relational operator
+// b: identifier
+// The entered stream has been verified.
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
