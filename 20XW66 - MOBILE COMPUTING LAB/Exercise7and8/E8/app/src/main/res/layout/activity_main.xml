@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/startLabel"
+        android:layout_width="107dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="44dp"
+        android:text="Start Date"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/startDateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="36dp"
+        android:onClick="openStartDatePicker"
+        android:text="Pick a date"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/startLabel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/endLabel"
+        android:layout_width="107dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="124dp"
+        android:text="End Date"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/endDateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="116dp"
+        android:onClick="openEndDatePicker"
+        android:text="Pick a date"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/endLabel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="80dp"
+        android:text="Difference"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endDateButton" />
+
+    <TextView
+        android:id="@+id/yField"
+        android:layout_width="116dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="62dp"
+        android:text="*"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <TextView
+        android:id="@+id/mField"
+        android:layout_width="116dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="62dp"
+        android:text="*"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/yField"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <TextView
+        android:id="@+id/dField"
+        android:layout_width="116dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="62dp"
+        android:text="*"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/mField"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="116dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Year"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="116dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:text="Month"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/yField"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="116dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:text="Day"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/mField"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
