@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/play"
+        android:title="Play video" />
+    <item
+        android:id="@+id/textColor"
+        android:title="Change text color" />
+    <item
+        android:id="@+id/fontSize"
+        android:title="Increase Font Size">
+        <menu>
+            <item
+                android:id="@+id/small"
+                android:title="Small" />
+
+            <item
+                android:id="@+id/medium"
+                android:title="Medium" />
+
+            <item
+                android:id="@+id/large"
+                android:title="Large" />
+
+            <item
+                android:id="@+id/xlarge"
+                android:title="XLarge" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/hide"
+        android:title="Hide VideoView" />
+    <item
+        android:id="@+id/exit"
+        android:title="Exit" />
+</menu>
