@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShopActivity">
+
+
+
+    <TextView
+        android:id="@+id/shopHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:text="Shop"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/itemImage1"
+        android:layout_width="106dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shopHeader"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/itemRating1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="23dp"
+        android:text="5/5"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/itemPrice1"
+        app:layout_constraintTop_toBottomOf="@+id/shopHeader" />
+
+    <TextView
+        android:id="@+id/itemPrice1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="23dp"
+        android:text="Rs. 1000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/itemName1"
+        app:layout_constraintTop_toBottomOf="@+id/shopHeader" />
+
+    <TextView
+        android:id="@+id/itemName1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="23dp"
+        android:text="item1"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/itemImage1"
+        app:layout_constraintTop_toBottomOf="@+id/shopHeader" />
+
+    <EditText
+        android:id="@+id/itemQuantity1"
+        android:layout_width="165dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="quantityForCart"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/itemImage1"
+        app:layout_constraintTop_toBottomOf="@+id/itemRating1" />
+
+<!--    Item2 below Item1 -->
+    <ImageView
+        android:id="@+id/itemImage2"
+        android:layout_width="106dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemImage1"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/itemRating2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="23dp"
+        android:text="4/5"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/itemPrice2"
+        app:layout_constraintTop_toBottomOf="@+id/itemImage1" />
+
+    <TextView
+        android:id="@+id/itemPrice2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="23dp"
+        android:text="Rs. 500"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/itemName2"
+        app:layout_constraintTop_toBottomOf="@+id/itemImage1" />
+
+    <TextView
+        android:id="@+id/itemName2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="23dp"
+        android:text="item2"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/itemImage2"
+        app:layout_constraintTop_toBottomOf="@+id/itemImage1" />
+
+    <EditText
+        android:id="@+id/itemQuantity2"
+        android:layout_width="165dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="quantityForCart"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/itemImage2"
+        app:layout_constraintTop_toBottomOf="@+id/itemRating2" />
+
+<!--    Item3 below Item2 -->
+    <ImageView
+        android:id="@+id/itemImage3"
+        android:layout_width="106dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemImage2"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/itemRating3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="23dp"
+        android:text="3/5"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/itemPrice3"
+        app:layout_constraintTop_toBottomOf="@+id/itemImage2" />
+
+    <TextView
+        android:id="@+id/itemPrice3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="23dp"
+        android:text="Rs. 750"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/itemName3"
+        app:layout_constraintTop_toBottomOf="@+id/itemImage2" />
+
+    <TextView
+        android:id="@+id/itemName3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="23dp"
+        android:text="item3"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/itemImage3"
+        app:layout_constraintTop_toBottomOf="@+id/itemImage2" />
+
+    <EditText
+        android:id="@+id/itemQuantity3"
+        android:layout_width="165dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="quantityForCart"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/itemImage3"
+        app:layout_constraintTop_toBottomOf="@+id/itemRating3" />
+
+<!--    Item4 below Item3 -->
+    <ImageView
+        android:id="@+id/itemImage4"
+        android:layout_width="106dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemImage3"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/itemRating4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="23dp"
+        android:text="2/5"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/itemPrice4"
+        app:layout_constraintTop_toBottomOf="@+id/itemImage3" />
+
+    <TextView
+        android:id="@+id/itemPrice4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="23dp"
+        android:text="Rs. 200"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/itemName4"
+        app:layout_constraintTop_toBottomOf="@+id/itemImage3" />
+
+    <TextView
+        android:id="@+id/itemName4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="23dp"
+        android:text="item4"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/itemImage4"
+        app:layout_constraintTop_toBottomOf="@+id/itemImage3" />
+
+    <EditText
+        android:id="@+id/itemQuantity4"
+        android:layout_width="165dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="quantityForCart"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/itemImage4"
+        app:layout_constraintTop_toBottomOf="@+id/itemRating4" />
+
+    <Button
+        android:id="@+id/submitToShopBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="59dp"
+        android:text="Submit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemQuantity4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

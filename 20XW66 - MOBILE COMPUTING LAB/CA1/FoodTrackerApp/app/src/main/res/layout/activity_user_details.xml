@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserDetailsActivity">
+
+    <LinearLayout
+        android:layout_width="411dp"
+        android:layout_height="732dp"
+        android:layout_marginEnd="1dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp"
+        android:paddingTop="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+            android:id="@+id/mobNum"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:layout_marginVertical="10dp"
+            android:ems="10"
+            android:hint="Mobile Number"
+            android:inputType="phone"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:layout_marginVertical="10dp"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:layout_marginBottom="70px"
+            android:fontFamily="sans-serif-medium"
+            android:text="Enter the captcha you see below"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/captchaField"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginVertical="10dp"
+            android:fontFamily="@font/dokdo"
+            android:lineSpacingExtra="8sp"
+            android:text="*insert captcha*"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="48sp"
+            android:textStyle="bold|italic"
+            android:typeface="normal" />
+
+        <EditText
+            android:id="@+id/userInpField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:layout_marginBottom="100px"
+            android:ems="10"
+            android:hint="the captcha says..."
+            android:inputType="number"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:text="SUBMIT" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
