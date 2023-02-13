@@ -25,7 +25,7 @@ class StudentRVAdapter(studentModalArrayList: ArrayList<StudentModal>, context: 
         // on below line we are inflating our layout
         // file for our recycler view items.
         val view: View =
-            LayoutInflater.from(parent.context).inflate(R.layout.activity_view_all, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.activity_student_item, parent, false)
         return ViewHolder(view)
     }
 

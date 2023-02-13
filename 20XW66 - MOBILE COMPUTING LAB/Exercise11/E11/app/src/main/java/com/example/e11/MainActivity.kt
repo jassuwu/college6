@@ -1,5 +1,7 @@
 package com.example.e11
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -50,6 +52,46 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent);
         }
 
+        updateBtn.setOnClickListener {
+            if (rollNoField.text.isEmpty()) {
+                Toast.makeText(applicationContext, "Please enter the roll no..", Toast.LENGTH_SHORT).show();
+            } else {
+                dbHandler!!.updateStudent(rollNoField.text.toString().toInt(), nameField.text.toString(), marksField.text.toString().toDouble())
+                Toast.makeText(applicationContext, "Student updated.", Toast.LENGTH_SHORT).show();
+                rollNoField.setText("");
+                nameField.setText("");
+                marksField.setText("");
+            }
+        }
+
+        deleteBtn.setOnClickListener {
+            if (rollNoField.text.isEmpty()) {
+                Toast.makeText(applicationContext, "Please enter the roll no..", Toast.LENGTH_SHORT).show();
+            } else {
+                dbHandler!!.deleteStudent(rollNoField.text.toString().toInt())
+                Toast.makeText(applicationContext, "Student deleted.", Toast.LENGTH_SHORT).show();
+                rollNoField.setText("");
+                nameField.setText("");
+                marksField.setText("");
+            }
+        }
+
+        viewBtn.setOnClickListener {
+            val builder: AlertDialog.Builder = AlertDialog.Builder(this@MainActivity)
+
+            var studentDetails = dbHandler!!.getStudent(rollNoField.text.toString().toInt())
+
+            builder.setTitle("Student Details")
+            builder.setMessage(studentDetails.toString())
+            builder.setCancelable(false)
+            builder.setNegativeButton("Okay"
+            ) { dialog: DialogInterface, _: Int ->
+                dialog.cancel()
+            }
+
+            val alertDialog: AlertDialog = builder.create()
+            alertDialog.show()
+        }
 
     }
 }

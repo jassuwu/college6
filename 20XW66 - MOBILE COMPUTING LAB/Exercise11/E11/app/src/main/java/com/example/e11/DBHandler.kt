@@ -16,10 +16,10 @@ class DBHandler  // creating a constructor for our database handler.
         // an sqlite query and we are
         // setting our column names
         // along with their data types.
-        val query = ("CREATE TABLE " + TABLE_NAME + " ("
-                + ROLLNO_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + NAME_COL + " TEXT,"
-                + MARKS_COL + " TEXT)")
+        val query = ("CREATE TABLE $TABLE_NAME (" +
+                "$ROLLNO_COL INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "$NAME_COL TEXT," +
+                "$MARKS_COL TEXT)")
         // at last we are calling a exec sql
         // method to execute above sql query
         db.execSQL(query)
@@ -59,7 +59,7 @@ class DBHandler  // creating a constructor for our database handler.
     fun getStudents(): ArrayList<StudentModal> {
         val db = this.writableDatabase
 
-        val cursorStudents = db.rawQuery("SELECT * FROM $TABLE_NAME", null);
+        val cursorStudents = db.rawQuery("SELECT * FROM $TABLE_NAME;", null);
 
         val studentsList = ArrayList<StudentModal>();
 
@@ -73,9 +73,39 @@ class DBHandler  // creating a constructor for our database handler.
         return studentsList;
     }
 
+    fun getStudent(rollNo: Int): StudentModal {
+        val db = this.writableDatabase
+
+        val cursorStudent = db.rawQuery("SELECT * FROM $TABLE_NAME WHERE $ROLLNO_COL = $rollNo;", null);
+
+        cursorStudent.moveToFirst()
+
+        val student = StudentModal(cursorStudent.getInt(0), cursorStudent.getString(1), cursorStudent.getDouble(2));
+
+        cursorStudent.close()
+        return student;
+    }
+
+    fun updateStudent(rollNo: Int, name: String, marks: Double) {
+        val db = this.writableDatabase
+        val values = ContentValues()
+
+        values.put(NAME_COL, name)
+        values.put(MARKS_COL, marks)
+
+        db.update(TABLE_NAME, values, "$ROLLNO_COL = ?", arrayOf(rollNo.toString()))
+        db.close()
+    }
+
+    fun deleteStudent(rollNo: Int) {
+        val db = this.writableDatabase
+        db.delete(TABLE_NAME, "$ROLLNO_COL = ?", arrayOf(rollNo.toString()))
+        db.close()
+    }
+
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         // this method is called to check if the table exists already.
-        db.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
+        db.execSQL("DROP TABLE IF EXISTS $TABLE_NAME;")
         onCreate(db)
     }
 
