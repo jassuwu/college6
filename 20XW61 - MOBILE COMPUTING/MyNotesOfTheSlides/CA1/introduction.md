@@ -74,11 +74,6 @@ There are two types of mobility:
 - Radio –short wave , AM and FM
 - Television (John Baird)
 
-Additional facts:
-
-- Heinrich Hertz measured Maxwell's waves and demonstrated that their velocity was equal to the velocity of light.
-- Michael Faraday worked for 10 years trying to prove that a magnet could induce electricity before finally succeeding in 1831.
-
 # Wireless Network Standards
 
 - NMT (Nordic Mobile Telephone System) – European Standard, Analog
