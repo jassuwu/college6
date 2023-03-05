@@ -128,12 +128,12 @@ A **wireless network** is a technology that enables two or more entities to comm
 
 # Layers of Mobile Computing
 
-| Layer             | Consists of              |
-| ----------------- | ------------------------ | --------- |
-| Applications      | Verticals, Horizontals   |
-| Operating Systems | Mobile operation systems | Notebooks |
-| Devices           | PDAs, Phones, Others     |
-| Wireless networks | WANs, LANs               |
+| Layer             | Consists of                     |
+| ----------------- | ------------------------------- |
+| Applications      | Verticals, Horizontals          |
+| Operating Systems | Mobile operation systems        |
+| Devices           | Notebooks, PDAs, Phones, Others |
+| Wireless networks | WANs, LANs                      |
 
 ### Mobile Applications
 
