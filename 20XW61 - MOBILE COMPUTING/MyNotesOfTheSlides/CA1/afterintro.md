@@ -1,6 +1,6 @@
 `Page 30 - 49`
 
-# Frequncies For Communication
+# Frequencies For Communication
 
 ![Image](../assets/FrequenciesForCommunication.png?raw=true "Frequencies For Communication")
 
