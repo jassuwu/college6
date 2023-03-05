@@ -187,3 +187,69 @@ Mobile computing faces several challenges.
 - **User Location Management:** As users move around with their mobile devices, it becomes difficult to keep track of their location and provide them with location-based services.
 
 - **Device Limitation:** Mobile devices have limitations that pose challenges for mobile computing. They often have limited memory and computational power compared to desktop computers. Their small displays can make it difficult to view and interact with content. And their battery life is limited, which means they need to be recharged frequently.
+
+# Evolution of Mobile Communications
+
+- **First Generation (1G)**:
+
+  - Standards: AMPS (Advanced Mobile Phone System, US), TACS (Total Access Communication System, Europe), NIT (Nippon Telephone Telegraph, Japan)
+  - Services: Only Voice
+  - Technology: Analog
+  - Speed: 1kbps to 2.4 kbps
+  - Sharing of resources: FDMA
+  - Circuit Switching
+
+- **Second Generation (2G)**:
+
+  - Standard: GSM
+  - Services: Digital Voice, SMS, International Roaming, Conferencing, Call Waiting, Call Hold, Call Forwarding, Call Barring, Caller Number Identification,
+    Closed User Groups (CUGs), USSD (Unstructured Supplementary Service data) Services,
+    Authentication , billing based on the services provided to their customers
+  - Technology: Digital
+  - Speed: 14kbps to 64 kbps
+  - Frequency: 900 MHz and1800 MHz
+  - Shared Resource: TDMA and CDMA
+    Circuit switching
+
+- **Second and a half Generation (2.5G)**:
+
+  - Standards : General Packet Radio Service(GPRS) & EDGE(Enhanced Data rates in GSM)
+  - Frequency :850-1900MHz
+  - Speed :115kbps(GPRS)/384kbps(EDGE)
+  - Switching : packet switching for data transfer
+  - Services : push to talk,multimedia ,web based info entertainment,support WAP,MMS,SMS,mobile games,and search and directory,email access ,video conferencing.
+
+- **Third Generation (3G)**:
+
+  - Standards : UMTS-Universal Mobile telecommunicating System(Wideband CDMA)-Based on GSM(Global Systems for Mobile).
+    The data are sent through the technology called Packet Switching.
+  - Services : Wireless voice telephony ,high speed internet access,fixed wireless Internet access ,video calls ,chatting & conferencing,mobile TV ,Video on demand ,Location-based services.
+  - Speed :384Kbps to2Mbps
+  - Frequency :about8to2.5GHz
+  - Bandwidth –5to20MHz
+
+- **Fourth Generation (4G)**:
+
+  - Standards : LTE (Long Term Evolution) ,WiMAX (Worldwide Interoperability for Microwave Access)
+  - Services : High speed internet access ,video calls ,chatting & conferencing ,mobile TV ,Video on demand ,Location-based services.
+  - Speed : 100Mbps to 1Gbps
+  - Frequency : 2.5GHz to 5GHz
+  - Bandwidth : 20MHz to 100MHz
+
+- **Fifth Generation (5G)**:
+
+  - Standards : 5G is the next generation of mobile networks, which will be able to deliver data at speeds of up to 10Gbps.
+  - Services : High speed internet access ,video calls ,chatting & conferencing ,mobile TV ,Video on demand ,Location-based services.
+  - Speed : 1 to 10Gbps
+  - Frequency : 3GHz to 300GHz
+  - Bandwidth : 1000x bandwidth per unit area
+
+- **Sixth Generation (6G)**:
+
+  - 6G aims to integrate 5G with satellite networks for global coverage.
+  - Satellite communication network may consist of telecommunication, earth imaging and navigation satellite networks.
+  - Goal of 6G is to provide network position identifier, multimedia and internet connectivity, and weather information services to mobile users.
+  - Nano Antennas will be implemented at different geographical locations to broadcast high speed electromagnetic signals.
+
+- **Seventh Generation (7G)**:
+  - 7G aims to acquire space roaming and become completely wireless with uninterrupted access to information anytime and anywhere with better quality, high speed, increased bandwidth and reduced cost.
